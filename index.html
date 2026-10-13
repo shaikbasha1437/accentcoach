@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AccentCoach: pronunciation practice in your browser</title>
+<meta name="description" content="Practice English pronunciation: listen to a sentence, say it, and see which words came out clear, unclear, or missed.">
+<meta name="theme-color" content="#2e1065">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <h1>AccentCoach</h1>
+  <p class="sub">Pick a sentence, listen to it, say it out loud, and see which words came through clearly. Click any word to hear it on its own.</p>
+  <div id="support" class="card notice" hidden></div>
+  <div class="layout">
+    <div>
+      <section class="card">
+        <div class="row"><h2>1. Choose a sentence</h2>
+          <div class="toolbar"><select id="set" aria-label="Practice set"></select><button class="ghost" id="shuffle" title="Random sentence">🎲 Random</button></div></div>
+        <div id="sentences" class="chips"></div>
+        <label class="lbl" for="target">Target sentence (edit or type your own)</label>
+        <textarea id="target" rows="2"></textarea>
+      </section>
+      <section class="card">
+        <div class="row"><h2>2. Listen</h2></div>
+        <div id="words" class="words" aria-label="Target words, click to hear each one"></div>
+        <div class="toolbar end">
+          <button id="listen">🔊 Listen</button><button class="ghost" id="slow">🐢 Slow</button>
+          <label class="lbl inline">Voice <select id="voice"></select></label>
+          <label class="lbl inline">Rate <input type="range" id="rate" min="0.5" max="1.4" step="0.05" value="0.95"> <span id="rateVal">0.95</span></label>
+        </div>
+      </section>
+      <section class="card">
+        <div class="row"><h2>3. Speak</h2>
+          <label class="lbl inline">Accent model <select id="lang"><option value="en-US">English (US)</option><option value="en-GB">English (UK)</option><option value="en-IN">English (India)</option></select></label></div>
+        <div class="toolbar">
+          <button id="speak" class="big">🎙️ Start speaking</button>
+          <label class="lbl inline"><input type="checkbox" id="recordOpt"> Record my voice to play back</label>
+          <button class="ghost" id="playback" hidden>▶ Play my attempt</button>
+        </div>
+        <div id="live" class="live" aria-live="polite"><span class="muted">Your words will appear here as you speak.</span></div>
+        <details class="small"><summary>No mic? Type what was heard (for testing)</summary>
+          <div class="toolbar"><input id="manual" placeholder="Type a transcript…"><button class="ghost" id="manualGo">Score it</button></div></details>
+      </section>
+      <section class="card" id="resultCard" hidden>
+        <div class="score-card"><div id="score" class="score">–</div>
+          <div><div id="scoreLbl" class="score-lbl"></div><div id="counts" class="muted small"></div><div id="heard" class="small heard"></div></div></div>
+        <div id="resultWords" class="words result"></div>
+        <div class="legend small"><span class="w correct">clear</span><span class="w unclear">unclear</span><span class="w missed">missed</span><span class="w extra">extra</span></div>
+        <ul id="tips" class="tips"></ul>
+        <div class="toolbar end"><button id="again">↻ Try again</button><button class="ghost" id="next">Next sentence →</button></div>
+      </section>
+    </div>
+    <aside>
+      <section class="card"><h2>Progress</h2>
+        <div class="stats"><div><b id="streak">0</b><span>day streak</span></div><div><b id="attempts">0</b><span>attempts</span></div><div><b id="avg">–</b><span>avg score</span></div></div>
+      </section>
+      <section class="card"><h2>Weakest words</h2><p class="muted small">Words you often miss. Click to practice.</p><div id="weak" class="chips"></div>
+        <button class="ghost small" id="drill" hidden>Practice these words</button></section>
+      <section class="card"><h2>Recent</h2><ul id="history" class="history"></ul><button class="ghost small" id="clear">Clear history</button></section>
+      <section class="card notice small"><strong>Privacy.</strong> AccentCoach has no server and stores your progress only in this browser (localStorage). Speech recognition is done by your browser: in Chrome and Edge, audio may be sent to the browser maker's speech service to turn it into text. Optional recordings stay in memory and are never uploaded.</section>
+    </aside>
+  </div>
+</main>
+<footer>Open source · MIT · <a href="https://github.com/shaikbasha1437/accentcoach">GitHub</a></footer>
+<script src="coach-core.js"></script><script src="sets.js"></script><script src="app.js"></script>
+</body></html>

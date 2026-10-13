@@ -1,0 +1,7 @@
+window.PRACTICE_SETS = {
+  'Everyday': ['Could you please pass me the water?', 'I would like a cup of coffee with milk.', 'What time does the next train leave?', 'The weather is really nice this weekend.', 'Thank you so much for your help today.', 'I usually walk to work in the morning.'],
+  'Job interview': ['Tell me a little about yourself.', 'I have three years of experience in software testing.', 'My greatest strength is attention to detail.', 'I work well with developers and product managers.', 'Where do you see yourself in five years?', 'Thank you for the opportunity to interview today.'],
+  'Tech & QA': ['I found a regression in the checkout flow.', 'The automated tests run on every pull request.', 'Please attach the steps to reproduce the issue.', 'We should verify the API returns a valid response.', 'This bug is a high priority for the next release.', 'I wrote end-to-end tests with Selenium and Cypress.'],
+  'Tricky sounds (th / v / w / r / l)': ['I think these three things are worth it.', 'The weather in the north is rather cold.', 'We visited a very old village in the valley.', 'Will was wearing a warm wool vest.', 'The red lorry rolled really slowly.', 'Larry likes to read in the library.', 'Her brother thought about it for a while.'],
+  'Word stress pairs': ['I will record a new record.', 'Please present the present to her.', 'They object to the object on the desk.', 'We expect a large increase, but they will not increase prices.', 'The rebel leader tried to rebel.', 'Photograph, photographer, photographic.'],
+};

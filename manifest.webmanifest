@@ -1,0 +1,11 @@
+{
+  "name": "AccentCoach",
+  "short_name": "AccentCoach",
+  "description": "Pronunciation practice: listen, speak, and see which words came through clearly.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0716",
+  "theme_color": "#2e1065",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
